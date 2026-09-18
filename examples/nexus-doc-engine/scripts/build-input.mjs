@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const demoRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const sourcePath = path.join(demoRoot, 'sample', 'nexus-demo.json');
@@ -23,10 +23,7 @@ const formatRm = amount =>
   }).format(amount);
 
 const evidenceRows = record.evidence
-  .map(
-    item =>
-      `| ${item.type} | ${item.label} | ${item.status} |`
-  )
+  .map(item => `| ${item.type} | ${item.label} | ${item.status} |`)
   .join('\n');
 
 const markdown = `# ${record.title}
@@ -91,7 +88,11 @@ await mkdir(generatedDir, { recursive: true });
 await Promise.all([
   writeFile(markdownPath, markdown, 'utf8'),
   writeFile(indexPath, indexMarkdown, 'utf8'),
-  writeFile(provenancePath, `${JSON.stringify(provenance, null, 2)}\n`, 'utf8'),
+  writeFile(
+    provenancePath,
+    `${JSON.stringify(provenance, null, 2)}\n`,
+    'utf8'
+  ),
 ]);
 
 console.log('NEXUS demo input generated.');
