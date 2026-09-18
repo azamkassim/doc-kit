@@ -1,0 +1,34 @@
+{
+  "schema_version": "nexus-demo.v1",
+  "classification": "SYNTHETIC_NON_SENSITIVE",
+  "snapshot_at": "2026-09-18T14:05:00+08:00",
+  "record": {
+    "title": "Synthetic Contract Review",
+    "customer": {
+      "name": "Example Marine Services Sdn. Bhd.",
+      "customer_id": "DEMO-CUST-001"
+    },
+    "facility": {
+      "type": "Term Financing-i",
+      "amount_rm": 1000000,
+      "tenure_months": 36,
+      "purpose": "Synthetic demonstration only"
+    },
+    "evidence": [
+      {
+        "type": "Governed Evidence",
+        "label": "Synthetic contract summary",
+        "status": "AVAILABLE"
+      },
+      {
+        "type": "Information Gap",
+        "label": "Independent verification",
+        "status": "REQUIRED"
+      }
+    ],
+    "decision_context": {
+      "recommendation": "No credit recommendation is produced by this demo.",
+      "human_decision_required": true
+    }
+  }
+}
