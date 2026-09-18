@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 await import('./build-input.mjs');
 
